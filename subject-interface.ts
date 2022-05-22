@@ -1,7 +1,7 @@
 import { IObserver } from "./observer-interface";
 
-interface ISubject{
-    registerObserver(): void
-    deleteObserver(): void
+export interface ISubject{
+    registerObserver(observer: IObserver): void
+    deleteObserver(observer: IObserver): void
     notifyObservers(): void
 }
