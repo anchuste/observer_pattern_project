@@ -14,27 +14,27 @@ export class LaligaHubCommunication implements ISubject{
 
     public registerObserver(observer: IObserver): void{
 
-        if (!this.observersList.some(observerInList => observerInList 
-            === observer)) {
-
+        if (!this.observersList.some(observerInList => observerInList === observer)) {
                 this.observersList.push(observer);
         }
         else{
             throw new Error("The observer cannot be inserted. It already exists in the list.");
         }
-        
     }
 
     deleteObserver(observer: IObserver): void {
         throw new Error("Method not implemented.");
     }
-    notifyObservers(): void {
-        throw new Error("Method not implemented.");
+
+    notifyObservers(goal: Goal): void {
+        this.observersList.forEach((observer) => {
+            observer.update(goal);
+        });
     }
 
     goalReceivedAtTheHub(){
         let mercObj = new GoalGeneratorRandom(new Goal()).generateRandomGoal();
-        console.log(mercObj);
+        this.notifyObservers(mercObj);
+        //console.log(mercObj);
     }
-
 }

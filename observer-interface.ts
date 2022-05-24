@@ -1,4 +1,6 @@
+import { Goal } from "./goal-class"
+
 export interface IObserver{
-    update(): void
-    display(): void
+    update(goal: Goal): void
+    display(goal: Goal): void
 }

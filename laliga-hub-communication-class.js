@@ -9,8 +9,7 @@ class LaligaHubCommunication {
         this.observersList = [];
     }
     registerObserver(observer) {
-        if (!this.observersList.some(observerInList => observerInList
-            === observer)) {
+        if (!this.observersList.some(observerInList => observerInList === observer)) {
             this.observersList.push(observer);
         }
         else {
@@ -20,12 +19,15 @@ class LaligaHubCommunication {
     deleteObserver(observer) {
         throw new Error("Method not implemented.");
     }
-    notifyObservers() {
-        throw new Error("Method not implemented.");
+    notifyObservers(goal) {
+        this.observersList.forEach((observer) => {
+            observer.update(goal);
+        });
     }
     goalReceivedAtTheHub() {
         let mercObj = new goal_generator_class_1.GoalGeneratorRandom(new goal_class_1.Goal()).generateRandomGoal();
-        console.log(mercObj);
+        this.notifyObservers(mercObj);
+        //console.log(mercObj);
     }
 }
 exports.LaligaHubCommunication = LaligaHubCommunication;
