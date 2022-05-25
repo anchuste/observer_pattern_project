@@ -14,5 +14,8 @@ class ScoreBoardLaCeramica {
         console.log("Gol de " + goal.getScorer() + " en el minuto " + goal.getMinute());
         console.log("El resultado actual es de " + goal.getCurrentResult() + " a favor del " + goal.getTeam());
     }
+    suscribe(subject) {
+        subject.registerObserver(this);
+    }
 }
 exports.ScoreBoardLaCeramica = ScoreBoardLaCeramica;
