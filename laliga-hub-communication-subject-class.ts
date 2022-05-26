@@ -23,7 +23,10 @@ export class LaligaHubCommunication implements ISubject{
     }
 
     deleteObserver(observer: IObserver): void {
-        throw new Error("Method not implemented.");
+        const index = this.observersList.indexOf(observer, 0);
+        if (index > -1) {
+            this.observersList.splice(index, 1);
+        }
     }
 
     notifyObservers(goal: Goal): void {

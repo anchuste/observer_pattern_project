@@ -6,9 +6,9 @@ class ScoreBoardLaCeramica {
         this.display(goal);
     }
     display(goal) {
-        console.log("###################");
-        console.log("Estadio La Cerámica");
-        console.log("###################");
+        console.log("*********************************");
+        console.log("Videomarcador: Estadio La Cerámica");
+        console.log("*********************************");
         console.log("¡¡¡Gooooooooooooool!!!");
         console.log("Marcó el " + goal.getTeam());
         console.log("Gol de " + goal.getScorer() + " en el minuto " + goal.getMinute());

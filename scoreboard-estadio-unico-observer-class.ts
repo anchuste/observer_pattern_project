@@ -7,9 +7,9 @@ export class ScoreBoardEstadioUnico implements IObserver{
         this.display(goal)
     }
     display(goal: Goal): void {
-        console.log("###################");
+        console.log("*********************************");
         console.log("Estadio Único Madre de Ciudades");
-        console.log("###################");
+        console.log("*********************************");
         console.log("¡¡¡Gooooooooooooool!!!");
         console.log("Marcó el " + goal.getTeam());
         console.log("Gol de " + goal.getScorer() + " en el minuto " + goal.getMinute());
